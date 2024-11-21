@@ -7,7 +7,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories
+@EnableJpaRepositories(basePackages = {"com.bracme.kanban.kanban.repositories"})
 @EnableJpaAuditing
 public class PersistenceConfig {
 }

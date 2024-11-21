@@ -15,19 +15,23 @@ public class CustomerMapper {
 	}
 
 	public static Customer mapToEntity(CreateCustomerRequestDto dto) {
+		log.info("dto: {}", dto);
+		
 		if (dto == null) {
 			log.warn("CreateCustomerRequestDto null");
 			return null;
 		}
-
+		
 		return Customer
-			.builder()
-			.login(dto.login())
-			.password(dto.password())
-			.build();
+		.builder()
+		.login(dto.login())
+		.password(dto.password())
+		.build();
 	}
-
+	
 	public static CustomerResponseDto mapToDto(Customer c) {
+		log.info("Customer: {}", c);
+
 		if (c == null) {
 			log.warn("Customer null");
 			return null;
