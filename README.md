@@ -32,7 +32,7 @@ Este projeto é uma api para a utilização de um quadro no formato kanban para 
 
 ## Status do Projeto
 
-O projeto encontra-se na Sprint Inicial, com *features* básicas para o funcionamento e teste local. É planejado que todas as tarefas possam ser cumpridas num prazo pequeno e .
+O projeto encontra-se na Sprint Inicial, com *features* básicas para o funcionamento e teste local. É planejado que todas as tarefas possam ser cumpridas num prazo pequeno e rápido, para demonstrar um pouco do processo de desenvolvimento de software.
 
 ## Pré-Requisitos
 
@@ -54,12 +54,13 @@ sudo usermod -aG docker $USER
 
 # OpenJDK 21
 sudo apt-get install -y openjdk-21-jdk
-sudo gedit ~/.bashrc
 
 # Colar dentro do arquivo .bashrc
 JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
 export JAVA_HOME
 export PATH=$PATH:$JAVA_HOME
+
+sudo gedit ~/.bashrc
 
 # Postman
 snap install postman
