@@ -32,7 +32,7 @@ Este projeto é uma api para a utilização de um quadro no formato kanban para 
 
 ## Status do Projeto
 
-O projeto encontra-se na Sprint Inicial, com *features* básicas para o funcionamento e teste local. É planejado que todas as tarefas possam ser cumpridas num prazo pequeno e rápido, para demonstrar um pouco do processo de desenvolvimento de software.
+O projeto encontra-se na Sprint Inicial, com *features* básicas para o funcionamento e teste local. É planejado que todas as tarefas possam ser cumpridas num prazo pequeno e rápido, para demonstrar um pouco do processo de desenvolvimento de *software*.
 
 ## Pré-Requisitos
 
@@ -47,26 +47,28 @@ sudo apt-get upgrade
 sudo apt-get install -y git
 
 # Docker
-sudo apt-get install -y docker
+sudo apt-get install -y docker docker-compose
 sudo systemctl start docker
 sudo systemctl enable docker
 sudo usermod -aG docker $USER
 
 # OpenJDK 21
 sudo apt-get install -y openjdk-21-jdk
+sudo nano ~/.bashrc
 
 # Colar dentro do arquivo .bashrc
 JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
 export JAVA_HOME
 export PATH=$PATH:$JAVA_HOME
 
-sudo gedit ~/.bashrc
+#	Reiniciar o bash
+source ~/.bashrc
 
 # Postman
-snap install postman
+sudo snap install postman
 
 # DBeaver Community Edition
-sudo apt-get install -y dbeaver-ce
+sudo snap install dbeaver-ce
 
 # Gradle
 sudo apt-get install -y gradle
@@ -111,4 +113,22 @@ sudo snap install code --classic
 
 ## Contribuição
 
-- ![Pedro Rabis](https://avatars.githubusercontent.com/u/42853022?v=4) - ☕ Desenvolvedor e Product Owner;
+Estão aqui todos os participantes que colaboraram com o decorrer desse projeto.
+
+<table style="border: solid 2px rebeccapurple">
+	<tr>
+		<td align="center">
+			<a href="https://www.linkedin.com/in/rabispedro/">
+				<img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/42853022?v=4" width="100px;" />
+				<br/>
+				<sub>
+					<b>
+						☕ Desenvolvedor
+						</br>
+						🗃 Product Owner
+					</b>
+				</sub>
+			</a>
+		</td>
+	</tr>
+</table>
