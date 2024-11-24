@@ -7,5 +7,4 @@ public record CustomerResponseDto(
 	UUID id,
 	String login,
 	LocalDateTime createdAt,
-	LocalDateTime updatedAt) {
-}
+	LocalDateTime updatedAt) {}

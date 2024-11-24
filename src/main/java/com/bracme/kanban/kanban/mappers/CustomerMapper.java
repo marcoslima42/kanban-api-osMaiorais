@@ -6,6 +6,7 @@ import com.bracme.kanban.kanban.dtos.requests.CreateCustomerRequestDto;
 import com.bracme.kanban.kanban.dtos.responses.CustomerResponseDto;
 import com.bracme.kanban.kanban.entities.Customer;
 
+import lombok.NonNull;
 import lombok.extern.log4j.Log4j2;
 
 @Log4j2
@@ -14,14 +15,9 @@ public class CustomerMapper {
 	private CustomerMapper() {
 	}
 
-	public static Customer mapToEntity(CreateCustomerRequestDto dto) {
-		log.info("dto: {}", dto);
-		
-		if (dto == null) {
-			log.warn("CreateCustomerRequestDto null");
-			return null;
-		}
-		
+	public static Customer mapToEntity(@NonNull CreateCustomerRequestDto dto) {
+		log.info("Dto to map: {}", dto);
+
 		return Customer
 		.builder()
 		.login(dto.login())
@@ -29,13 +25,8 @@ public class CustomerMapper {
 		.build();
 	}
 	
-	public static CustomerResponseDto mapToDto(Customer c) {
-		log.info("Customer: {}", c);
-
-		if (c == null) {
-			log.warn("Customer null");
-			return null;
-		}
+	public static CustomerResponseDto mapToDto(@NonNull Customer c) {
+		log.info("Customer to map: {}", c);
 
 		return new CustomerResponseDto(
 			c.getId(),

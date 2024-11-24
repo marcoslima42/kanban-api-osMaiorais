@@ -15,5 +15,4 @@ public record CreateCustomerRequestDto(
 		min = 12,
 		max = 88,
 		message = "Password must be between 12 and 88 caracters")
-	String password
-) {}
+	String password) {}
