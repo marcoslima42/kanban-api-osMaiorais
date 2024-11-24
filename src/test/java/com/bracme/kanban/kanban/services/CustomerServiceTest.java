@@ -21,7 +21,7 @@ import com.bracme.kanban.kanban.repositories.CustomerRepository;
 
 @SpringBootTest
 @ExtendWith(MockitoExtension.class)
-public class CustomerServiceTest {
+class CustomerServiceTest {
 	@Mock
 	private CustomerRepository customerRepository;
 
@@ -29,12 +29,12 @@ public class CustomerServiceTest {
 	private CustomerService customerService;
 
 	@BeforeEach
-	public void setUp() {
+	void setUp() {
 		customerService = new CustomerService(customerRepository);
 	}
 	
 	@Test
-	public void whenGetAllWithoutParameters_ThenReturnList () {
+	void whenGetAllWithoutParameters_ThenReturnList () {
 		//	givEN / Arrange
 		var customer = Customer
 			.builder()
