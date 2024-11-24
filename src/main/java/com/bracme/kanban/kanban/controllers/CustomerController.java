@@ -88,6 +88,6 @@ public class CustomerController {
 		@RequestBody UpdatePasswordCustomerRequestDto dto) {
 
 		customerService.updatePasswordById(id, dto);
-		return ResponseEntity.noContent().build();
+		return ResponseEntity.ok(null);
 	}
 }
