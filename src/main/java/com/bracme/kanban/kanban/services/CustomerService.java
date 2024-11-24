@@ -86,11 +86,11 @@ public class CustomerService {
 
 	public void deleteById(UUID id) {
 		log.info("{} Customer Service - deleteById", LogMessages.START_LOG_MESSAGE);
-		this.customerRepository
+		Customer customer = this.customerRepository
 			.findById(id)
 			.orElseThrow(() -> new RuntimeException(ExceptionMessages.CUSTOMER_NOT_FOUND_MESSAGE));
-
-			this.customerRepository.deleteById(id);
+			customer.setAtivado(false);
+			this.customerRepository.save(customer);
 
 			log.info("{} Customer Service - deleteById", LogMessages.SUCESSFUL_FINISH_LOG_MESSAGE);
 		return;
