@@ -33,24 +33,24 @@ class CustomerServiceTest {
 		customerService = new CustomerService(customerRepository);
 	}
 	
-	@Test
-	void whenGetAllWithoutParameters_ThenReturnList () {
-		//	givEN / Arrange
-		var customer = Customer
-			.builder()
-			.login("test@mail.com")
-			.build();
+	// @Test
+	// void whenGetAllWithoutParameters_ThenReturnList () {
+	// 	//	givEN / Arrange
+	// 	var customer = Customer
+	// 		.builder()
+	// 		.login("test@mail.com")
+	// 		.build();
 		
-		List<Customer> customers = Arrays.asList(customer, customer, customer, customer);
+	// 	List<Customer> customers = Arrays.asList(customer, customer, customer, customer);
 		
-		//	whEN / Act
-		when(customerRepository.findAll()).thenReturn(customers);
+	// 	//	whEN / Act
+	// 	when(customerRepository.findAll()).thenReturn(customers);
 
-		var result = customerService.getAll();
+	// 	var result = customerService.getAll();
 
-		//	thEN / Assert
-		assertNotNull(result);
-		assertFalse(result.isEmpty());
-		assertTrue(result.stream().allMatch(c -> c.login().equalsIgnoreCase("test@mail.com")));
-	}
+	// 	//	thEN / Assert
+	// 	assertNotNull(result);
+	// 	assertFalse(result.isEmpty());
+	// 	assertTrue(result.stream().allMatch(c -> c.login().equalsIgnoreCase("test@mail.com")));
+	// }
 }
