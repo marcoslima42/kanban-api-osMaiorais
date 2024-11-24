@@ -11,6 +11,8 @@ public record CreateCustomerRequestDto(
 		message = "Login must be less or equals than 88 caracters")
 	String login,
 
+	@NotNull(
+		message = "Password is required")
 	@Size(
 		min = 12,
 		max = 88,

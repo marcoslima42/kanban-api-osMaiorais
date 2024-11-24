@@ -7,6 +7,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
+import com.bracme.kanban.kanban.constants.ExceptionMessages;
 import com.bracme.kanban.kanban.constants.LogMessages;
 import com.bracme.kanban.kanban.dtos.requests.CreateCustomerRequestDto;
 import com.bracme.kanban.kanban.dtos.requests.UpdateCustomerRequestDto;
@@ -43,7 +44,7 @@ public class CustomerService {
 		
 		Customer customer = this.customerRepository
 			.findById(id)
-			.orElseThrow(() -> new RuntimeException("Customer not found"));
+			.orElseThrow(() -> new RuntimeException(ExceptionMessages.CUSTOMER_NOT_FOUND_MESSAGE));
 
 		log.info("Customer: {}", customer);
 		
@@ -67,7 +68,7 @@ public class CustomerService {
 
 		Customer customer = this.customerRepository
 			.findById(id)
-			.orElseThrow(() -> new RuntimeException("Customer not found"));
+			.orElseThrow(() -> new RuntimeException(ExceptionMessages.CUSTOMER_NOT_FOUND_MESSAGE));
 		
 		if (dto.login() != null) {
 			customer.setLogin(dto.login());
@@ -87,7 +88,7 @@ public class CustomerService {
 		log.info("{} Customer Service - deleteById", LogMessages.START_LOG_MESSAGE);
 		this.customerRepository
 			.findById(id)
-			.orElseThrow(() -> new RuntimeException("Customer not found"));
+			.orElseThrow(() -> new RuntimeException(ExceptionMessages.CUSTOMER_NOT_FOUND_MESSAGE));
 
 			this.customerRepository.deleteById(id);
 
@@ -100,9 +101,9 @@ public class CustomerService {
 
 		Customer customer = this.customerRepository
 			.findById(id)
-			.orElseThrow(() -> new RuntimeException("Customer not found"));
+			.orElseThrow(() -> new RuntimeException(ExceptionMessages.CUSTOMER_NOT_FOUND_MESSAGE));
 
-		if(dto.password() != null && customer.getPassword().equals(dto.password())) {
+		if(customer.getPassword().equals(dto.password())) {
 			customer.setPassword(dto.newPassword());
 			this.customerRepository.save(customer);
 		}
