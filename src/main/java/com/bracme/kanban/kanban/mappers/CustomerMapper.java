@@ -19,10 +19,10 @@ public class CustomerMapper {
 		log.info("Dto to map: {}", dto);
 
 		return Customer
-		.builder()
-		.login(dto.login())
-		.password(dto.password())
-		.build();
+			.builder()
+			.login(dto.login())
+			.password(dto.password())
+			.build();
 	}
 	
 	public static CustomerResponseDto mapToDto(@NonNull Customer c) {
