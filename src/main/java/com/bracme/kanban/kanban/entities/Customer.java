@@ -23,4 +23,7 @@ public class Customer extends BaseEntity {
 
     @Column(name = "password", nullable = false)
     private String password;
+
+    @Column(name = "Ativado", nullable = false)
+    private Boolean ativado;
 }
